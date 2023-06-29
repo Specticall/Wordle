@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Template</title>
+    <!-- ========= CSS LINK ============ -->
+    <link rel="stylesheet" href="index.css" />
+    <!-- ========= ICON ============ -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- ========= FONTS (Poppins) ============ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/3b464485f8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <nav class="wordle-nav">
+        <div class="btn btn-again btn-nav" role="button">
+          Reset <i class="bx bx-repost"></i>
+        </div>
+        <div class="btn btn-hint btn-nav">
+          Hint <i class="bx bx-search-alt-2"></i>
+        </div>
+      </nav>
+      <!-- ==== LOOSE SCREEN ==== -->
+      <article class="loose">
+        <div class="loose-container">
+          <h2 class="loose-title">You Lost ❌</h2>
+          <p>The Word Was :</p>
+          <h3 class="loose-word">"ADIEU"</h3>
+          <button class="btn btn-green btn-again">Play Again</button>
+        </div>
+      </article>
+      <!-- ==== WIN SCREEN ==== -->
+      <article class="win">
+        <div class="win-container">
+          <h2 class="win-title">You Win 🏆</h2>
+          <p>Your Current Streak :</p>
+          <h3 class="streak">0</h3>
+          <button class="btn btn-green btn-again">Play Again</button>
+        </div>
+      </article>
+      <!-- <button>Reset</button> -->
+      <div class="grid">
+        <div class="row row-0">
+          <div class="column column-0">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-1">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-2">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-3">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-4">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+        </div>
+        <div class="row row-1">
+          <div class="column column-0">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-1">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-2">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-3">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-4">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+        </div>
+        <div class="row row-2">
+          <div class="column column-0">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-1">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-2">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-3">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-4">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+        </div>
+        <div class="row row-3">
+          <div class="column column-0">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-1">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-2">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-3">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-4">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+        </div>
+        <div class="row row-4">
+          <div class="column column-0">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-1">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-2">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-3">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-4">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+        </div>
+        <div class="row row-5">
+          <div class="column column-0">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-1">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-2">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-3">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+          <div class="column column-4">
+            <div class="column-front"></div>
+            <div class="column-back"></div>
+          </div>
+        </div>
+      </div>
+      <div class="keyboard">
+        <div class="keyboard-row">
+          <div class="keyboard-key key-q">Q</div>
+          <div class="keyboard-key key-w">W</div>
+          <div class="keyboard-key key-e">E</div>
+          <div class="keyboard-key key-r">R</div>
+          <div class="keyboard-key key-t">T</div>
+          <div class="keyboard-key key-y">Y</div>
+          <div class="keyboard-key key-u">U</div>
+          <div class="keyboard-key key-i">I</div>
+          <div class="keyboard-key key-o">O</div>
+          <div class="keyboard-key key-p">P</div>
+        </div>
+        <div class="keyboard-row">
+          <div class="keyboard-key key-a">A</div>
+          <div class="keyboard-key key-s">S</div>
+          <div class="keyboard-key key-d">D</div>
+          <div class="keyboard-key key-f">F</div>
+          <div class="keyboard-key key-g">G</div>
+          <div class="keyboard-key key-h">H</div>
+          <div class="keyboard-key key-j">J</div>
+          <div class="keyboard-key key-k">K</div>
+          <div class="keyboard-key key-l">L</div>
+        </div>
+        <div class="keyboard-row">
+          <div class="keyboard-key back-B">
+            <i class="fa-solid fa-delete-left"></i>
+          </div>
+          <div class="keyboard-key key-z">Z</div>
+          <div class="keyboard-key key-x">X</div>
+          <div class="keyboard-key key-c">C</div>
+          <div class="keyboard-key key-v">V</div>
+          <div class="keyboard-key key-b">B</div>
+          <div class="keyboard-key key-n">N</div>
+          <div class="keyboard-key key-m">M</div>
+          <div class="keyboard-key enter-E">ENTER</div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <!--  ========= JS Link ============-->
+  <script type="module" src="index.js"></script>
+</html>
