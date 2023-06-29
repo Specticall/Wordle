@@ -106,7 +106,7 @@ const playAgain = document.querySelectorAll(".btn-again");
 
 for (const key of keys) {
   key.addEventListener("click", () => {
-    const letter = key.className.split("").slice(-1)[0];
+    const letter = key.dataset.key;
 
     if (letter === "B") {
       backSpace();
@@ -150,7 +150,7 @@ function enterLetter(input) {
   if (column <= 4) column++;
   if (inputWord.length <= 4) inputWord.push(input);
 
-  // console.log(inputWord, column);
+  console.log(inputWord, column);
 }
 
 function backSpace() {
@@ -198,8 +198,8 @@ function enter() {
 
   storeCorrectAnswer(inputWord, result, collectiveAnswer);
 
-  // console.log(saveAnswer);
-  // console.log(collectiveAnswer);
+  console.log(saveAnswer);
+  console.log(collectiveAnswer);
 
   if (row === 5) {
     setTimeout(() => {
@@ -257,7 +257,7 @@ function colorKeyboard(color, answer) {
   // console.log(answer);
   setTimeout(() => {
     for (const key of keys) {
-      const letter = key.className.split("").slice(-1)[0];
+      const letter = key.dataset.key;
       answer.forEach((current, index) => {
         if (letter !== current || key.classList.contains("colored")) return;
         if (color[index] === "green") {
