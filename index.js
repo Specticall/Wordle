@@ -10,7 +10,8 @@ import { wordLibrary } from "./english.js";
 let row = 0,
   column = 0,
   inputWord = [],
-  winStreak = 0;
+  winStreak = 0,
+  saveAnswer = [];
 
 let keyboardLock = false;
 
@@ -149,7 +150,7 @@ function enterLetter(input) {
   if (column <= 4) column++;
   if (inputWord.length <= 4) inputWord.push(input);
 
-  console.log(inputWord, column);
+  // console.log(inputWord, column);
 }
 
 function backSpace() {
@@ -165,7 +166,7 @@ function backSpace() {
 
   inputWord.splice(inputWord.length - 1, 1);
   if (column > 0) column--;
-  console.log(inputWord);
+  // console.log(inputWord);
 }
 
 function enter() {
@@ -177,8 +178,8 @@ function enter() {
 
   if (inputWord.length !== 5) return;
   const result = checkWord(inputWord.join(""), generateAnswer);
-  console.log(inputWord.join(""));
-  console.log(result);
+  // console.log(inputWord.join(""));
+  // console.log(result);
 
   const resultSet = new Set(result);
   if (!resultSet.has("gray") && !resultSet.has("yellow")) {
@@ -188,13 +189,17 @@ function enter() {
       winScreen.classList.add("open");
     }, 1250);
   }
+
+  // saveAnswer(result);
+
   flipAnimation(result);
 
   colorKeyboard(result, inputWord);
 
   storeCorrectAnswer(inputWord, result, collectiveAnswer);
 
-  console.log(collectiveAnswer);
+  // console.log(saveAnswer);
+  // console.log(collectiveAnswer);
 
   if (row === 5) {
     setTimeout(() => {
@@ -249,22 +254,25 @@ function flipAnimation(result) {
 }
 
 function colorKeyboard(color, answer) {
+  // console.log(answer);
   setTimeout(() => {
     for (const key of keys) {
       const letter = key.className.split("").slice(-1)[0];
       answer.forEach((current, index) => {
-        if (letter === current && color[index] === "gray") {
-          key.style.backgroundColor = "#a4aec4";
-          key.style.color = "white";
-        }
-        if (letter === current && color[index] === "green") {
+        if (letter !== current || key.classList.contains("colored")) return;
+        if (color[index] === "green") {
           key.style.backgroundColor = "#79b851";
           key.style.color = "white";
         }
-        if (letter === current && color[index] === "yellow") {
+        if (color[index] === "yellow") {
           key.style.backgroundColor = "#f3c237";
           key.style.color = "white";
         }
+        if (color[index] === "gray") {
+          key.style.backgroundColor = "#a4aec4";
+          key.style.color = "white";
+        }
+        key.classList.add("colored");
       });
     }
   }, 1000);
@@ -296,7 +304,7 @@ function checkValid(input) {
 }
 
 function init() {
-  console.log("reset game");
+  // console.log("reset game");
   row = 0;
   column = 0;
   inputWord = [];
@@ -304,6 +312,7 @@ function init() {
   for (const key of keys) {
     key.style.backgroundColor = " #e3ebef";
     key.style.color = "initial";
+    key.classList.remove("colored");
   }
 
   for (let row = 0; row < 6; row++) {
@@ -326,7 +335,7 @@ function init() {
   generateAnswer = generate({ minLength: 5, maxLength: 5 });
 
   collectiveAnswer = generateAnswer.split("");
-  console.log(generateAnswer);
+  // console.log(generateAnswer);
 
   winScreen.classList.remove("open");
   looseScreen.classList.remove("open");
@@ -339,10 +348,12 @@ playAgain.forEach((current) => {
 });
 
 // Store every correct answer
-// function storeCorrectAnswer(newAns) {
+// const answerSave1 = ["gray", "gray", "gray", "gray", "gray"];
+
+// function saveAnswer(newAns) {
 //   newAns.forEach((current, index) => {
-//     if (current === "green" || current === "yellow")
-//       collectiveAnswer[index] = "taken";
+//     if (current === "green") saveAnswer[index] = "green";
+//     if (current === "yellow") saveAnswer[index] = "yellow";
 //   });
 // }
 
