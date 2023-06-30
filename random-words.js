@@ -1963,8 +1963,6 @@ export const wordList = [
   "zulu",
 ];
 
-
-
 const shortestWordSize = wordList.reduce((shortestWord, currentWord) =>
   currentWord.length < shortestWord.length ? currentWord : shortestWord
 ).length;

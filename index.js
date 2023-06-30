@@ -184,6 +184,7 @@ function enter() {
   const resultSet = new Set(result);
   if (!resultSet.has("gray") && !resultSet.has("yellow")) {
     winStreak++;
+    localStorage.setItem("savedWinStreak", winStreak);
     document.querySelector(".streak").textContent = winStreak;
     setTimeout(() => {
       winScreen.classList.add("open");
@@ -336,7 +337,7 @@ function init() {
   generateAnswer = generate({ minLength: 5, maxLength: 5 });
 
   collectiveAnswer = generateAnswer.split("");
-  // console.log(generateAnswer);
+  console.log(generateAnswer);
 
   winScreen.classList.remove("open");
   looseScreen.classList.remove("open");
@@ -381,6 +382,7 @@ function storeCorrectAnswer(answer, colorData, collected) {
 function lostGame(answer) {
   const theAnswerWas = document.querySelector(".loose-word");
   winStreak = 0;
+  localStorage.setItem("savedWinStreak", winStreak);
 
   theAnswerWas.textContent = `"${answer.toUpperCase()}"`;
   looseScreen.classList.add("open");
@@ -408,3 +410,6 @@ hintBtn.addEventListener("click", () => {
     }
   }
 });
+
+winStreak = localStorage.getItem("savedWinStreak");
+console.log(winStreak);
