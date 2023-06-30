@@ -260,19 +260,20 @@ function colorKeyboard(color, answer) {
       const letter = key.dataset.key;
       answer.forEach((current, index) => {
         if (letter !== current || key.classList.contains("colored")) return;
-        if (color[index] === "green") {
-          key.style.backgroundColor = "#79b851";
-          key.style.color = "white";
-        }
         if (color[index] === "yellow") {
           key.style.backgroundColor = "#f3c237";
           key.style.color = "white";
         }
+        if (color[index] === "green") {
+          key.style.backgroundColor = "#79b851";
+          key.style.color = "white";
+          key.classList.add("colored");
+        }
         if (color[index] === "gray") {
           key.style.backgroundColor = "#a4aec4";
           key.style.color = "white";
+          key.classList.add("colored");
         }
-        key.classList.add("colored");
       });
     }
   }, 1000);
